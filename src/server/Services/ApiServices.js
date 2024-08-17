@@ -16,9 +16,10 @@ async function fetchArtists() {
 
     try {
         const response = await fetch(url, artistsOptions);
-        console.log(response.status)
-        const data = await response.json()
-        console.log(data.artists)
+        if (response.status === 200){
+            const data = await response.json()
+            return data.artists
+        }
     } catch (error) {
         console.error('Falha em receber artistas: ', error)
     }
