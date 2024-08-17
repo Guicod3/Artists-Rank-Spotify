@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "name": "monkcase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/Services/connectio"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
