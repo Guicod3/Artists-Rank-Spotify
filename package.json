@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9"
   },
@@ -8,10 +9,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/Services/connectio"
+    "start": "nodemon src/server/Controllers/routes.js"
   },
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }

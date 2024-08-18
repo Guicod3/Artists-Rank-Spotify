@@ -1,5 +1,4 @@
 //Getting global variables from .env
-const port = process.env.PORT;
 const client_Id = process.env.Client_ID;
 const client_Secret = process.env.Client_secret;
 const url_Api = process.env.Url_API;
@@ -22,7 +21,6 @@ const url_ApiArtists = process.env.Url_Api_Artists;
 
 
 module.exports = {
-    port,
     client_Id,
     client_Secret,
     url_Api,

@@ -1,5 +1,4 @@
 require('dotenv').config({path: '../../../.env'});
-const { get } = require('request');
 const config = require('../config.js');
 const request = require('request-promise-native');
 

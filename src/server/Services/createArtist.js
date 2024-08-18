@@ -1,4 +1,3 @@
-require('dotenv').config({path: '../../.env'});
 const Artists = require('../Models/Artists.js')
 const fetchArtists = require('./ApiServices.js')
 let artistsMap = {}
@@ -26,7 +25,6 @@ async function getArtists(name) {
 }
 
 module.exports = getArtists;
-
 
 
 

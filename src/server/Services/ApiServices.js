@@ -25,5 +25,5 @@ async function fetchArtists() {
     }
 }
 
-
+fetchArtists()
 module.exports = fetchArtists;
