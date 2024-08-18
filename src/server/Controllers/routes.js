@@ -32,8 +32,7 @@ const createClassArtists = async (req, res, next) => {
 app.use(resolver(createClassArtists));
 
 app.get('/', (req, res) => {
-  res.send(finalArtists)
-  res.send('ativo')
+  res.sendFile(path.join(__dirname, '../../client/views/index.html'))
 })
 
 app.listen(port, () =>{
