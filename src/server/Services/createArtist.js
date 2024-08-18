@@ -5,7 +5,7 @@ let artistsMap = {}
 async function createClassArtists() {
     const data = await fetchArtists()
     data.forEach(artist => {
-        artistsMap[artist.name] = new Artists(
+        artistsMap[artist.id] = new Artists(
             artist.id,
             artist.name,
             artist.followers.total,
@@ -16,12 +16,12 @@ async function createClassArtists() {
     });
 }
 
-async function getArtists(name) {
-    if (!artistsMap[name]){
+async function getArtists(id) {
+    if (!artistsMap[id]){
         await createClassArtists();
     }
 
-    return artistsMap[name];
+    return artistsMap[id];
 }
 
 module.exports = getArtists;

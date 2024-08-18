@@ -1,3 +1,4 @@
+require('dotenv').config({ path: 'D:/monkCASE/.env' });
 //Getting global variables from .env
 const client_Id = process.env.Client_ID;
 const client_Secret = process.env.Client_secret;
@@ -18,7 +19,6 @@ const Justin_Bieber = process.env.Justin_Bieber;
 const Demi_Lovato = process.env.Demi_Lovato;
 const Taylor_Swift = process.env.Taylor_Swift;
 const url_ApiArtists = process.env.Url_Api_Artists;
-
 
 module.exports = {
     client_Id,

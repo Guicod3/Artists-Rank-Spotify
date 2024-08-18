@@ -1,4 +1,6 @@
+require('dotenv').config({path: '../../../.env'});
 const fetchArtists = require('./ApiServices.js')
+
 
 
 async function verifyRank() {
