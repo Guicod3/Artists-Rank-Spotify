@@ -1,4 +1,4 @@
-class Artists {
+export class Artists {
     constructor(id, name, followers, genres, popular, images){
         this.id = id
         this.name = name
@@ -13,5 +13,3 @@ class Artists {
         this.description = text
     }
 }
-
-module.exports = Artists;

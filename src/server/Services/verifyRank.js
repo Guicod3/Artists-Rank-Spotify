@@ -1,14 +1,11 @@
 require('dotenv').config({path: '../../../.env'});
 const fetchArtists = require('./ApiServices.js')
 
-
-
 async function verifyRank() {
 
     const data = await fetchArtists()
     const popArtists = data.filter(artist => artist.genres.includes('pop'));
     const sortArtists = popArtists.sort((a, b) => b.followers.total - a.followers.total)
-
     return sortArtists
 }
 
@@ -36,4 +33,3 @@ module.exports = {
     verifyRank,
     verifyTop5Genres
 }
-

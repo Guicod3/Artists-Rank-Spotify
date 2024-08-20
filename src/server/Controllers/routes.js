@@ -1,11 +1,10 @@
 require('dotenv').config({path: '../../../.env'});
-const { verifyRank, verifyTop5Genres } = require('../Services/verifyRank');
-const Artists = require('../Models/Artists')
+const config = require('../config.js')
 const path = require('path');
 const express = require('express');
 const app = express();
-const port = 3000
-let finalArtists = []
+const port = config.PORT;
+app.use(express.static('/monkCASE/src/client'));
 
 const resolver = (handlerFn) => {
     return (req, res, next) => {
@@ -13,23 +12,6 @@ const resolver = (handlerFn) => {
         .catch(e => next(e));
     }
   }
-
-const createClassArtists = async (req, res, next) => {
-    const tentativa = await verifyRank()
-    tentativa.forEach(element => {
-      const artist = new Artists(
-        element.id, 
-        element.name,
-        element.followers.total,
-        element.genres,
-        element.popularity,
-        element.images)
-        finalArtists.push(artist)
-    });
-    next()
-  }
-
-app.use(resolver(createClassArtists));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/views/index.html'))

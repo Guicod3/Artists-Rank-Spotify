@@ -2,6 +2,7 @@ const toggleButton = document.querySelector('button[data-collapse-toggle="navbar
 const navbarMenu = document.getElementById('navbar-default');
 
 toggleButton.addEventListener('click', function() {
+    console.log('aqui foi')
     const isHidden = navbarMenu.classList.contains('hidden');
 
     if (isHidden) {

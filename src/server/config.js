@@ -1,5 +1,6 @@
 require('dotenv').config({ path: 'D:/monkCASE/.env' });
 //Getting global variables from .env
+const PORT = process.env.PORT;
 const client_Id = process.env.Client_ID;
 const client_Secret = process.env.Client_secret;
 const url_Api = process.env.Url_API;
@@ -39,7 +40,8 @@ module.exports = {
     Justin_Bieber,
     Demi_Lovato,
     Taylor_Swift,
-    url_ApiArtists
+    url_ApiArtists,
+    PORT
 };
 
 

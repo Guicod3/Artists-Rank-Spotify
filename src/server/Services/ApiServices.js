@@ -1,5 +1,4 @@
 require('dotenv').config({path: '../../../.env'});
-const request = require('request');
 const config = require('../config.js');
 const access_token = require('./AcessToken.js')
 
