@@ -5,6 +5,8 @@ const express = require('express');
 const app = express();
 const port = config.PORT;
 app.use(express.static('/monkCASE/src/client'));
+const Artists = require('../Models/Artists.js');
+const { verifyRank, verifyTop5Genres } = require('../Services/verifyRank.js');
 
 const resolver = (handlerFn) => {
     return (req, res, next) => {
@@ -13,10 +15,35 @@ const resolver = (handlerFn) => {
     }
   }
 
+const createClassElement = async () => {
+  const finalArtists = []
+  const sortArtists = await verifyRank()
+            sortArtists.forEach(element => {
+              const artist = new Artists(
+                element.id, 
+                element.name,
+                element.followers.total,
+                element.genres,
+                element.popularity,
+                element.images)
+                finalArtists.push(artist)
+            });
+    return finalArtists
+}
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/views/index.html'))
 })
 
-app.listen(port, () =>{
-    console.log('Servidor ativo na porta: ', port)
+app.get('/api/artists', async (req, res) => {
+  try {
+    const dataArtists = await createClassElement()
+    res.json(dataArtists)
+  } catch (error) {
+    res.status(500).send('Erro de processamento da api')
+  }
 })
+
+app.listen(port, () => {
+  console.log('Servidor ativo na porta:', port);
+});
