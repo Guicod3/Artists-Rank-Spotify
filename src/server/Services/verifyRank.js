@@ -1,7 +1,7 @@
 require('dotenv').config({path: '../../../.env'});
 const fetchArtists = require('./ApiServices.js')
 
-async function verifyRank() {
+async function verifyRank() { //Retorna Artistas Ordenados por seguidores
 
     const data = await fetchArtists()
     const popArtists = data.filter(artist => artist.genres.includes('pop'));
@@ -9,7 +9,7 @@ async function verifyRank() {
     return sortArtists
 }
 
-async function verifyTop5Genres() {
+async function verifyTop5Genres() { //Retorna top 5 gêneros
 
     const data = await fetchArtists()
     let genres = data.flatMap(artist => artist.genres);

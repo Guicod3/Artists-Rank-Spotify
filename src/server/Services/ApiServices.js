@@ -2,7 +2,7 @@ require('dotenv').config({path: '../../../.env'});
 const config = require('../config.js');
 const access_token = require('./AcessToken.js')
 
-async function fetchArtists() { //Recebe Json com todos os artistas
+async function fetchArtists() { //Get Json dos Artistas 
     const token = await access_token()
     const url = config.url_ApiArtists + `?ids=${config.Ariana_Grande},${config.Ed_Sheeran},${config.Queen},${config.Maroon_5},${config.Imagine_Dragons},${config.Eminem},${config.Lady_Gaga},${config.Cold_Play},${config.Beyonce},${config.Bruno_Mars},${config.Rihanna},${config.Shakira},${config.Justin_Bieber},${config.Demi_Lovato},${config.Taylor_Swift}`
 

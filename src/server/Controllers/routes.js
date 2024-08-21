@@ -8,13 +8,6 @@ app.use(express.static('/monkCASE/src/client'));
 const Artists = require('../Models/Artists.js');
 const { verifyRank, verifyTop5Genres } = require('../Services/verifyRank.js');
 
-const resolver = (handlerFn) => {
-    return (req, res, next) => {
-      return Promise.resolve(handlerFn(req, res, next))
-        .catch(e => next(e));
-    }
-  }
-
 const createClassElement = async () => {
   const finalArtists = []
   const sortArtists = await verifyRank()
@@ -39,6 +32,15 @@ app.get('/api/artists', async (req, res) => {
   try {
     const dataArtists = await createClassElement()
     res.json(dataArtists)
+  } catch (error) {
+    res.status(500).send('Erro de processamento da api')
+  }
+})
+
+app.get('/api/genres', async (req, res) => {
+  try {
+    const dataGenres = await verifyTop5Genres()
+    res.json(dataGenres)
   } catch (error) {
     res.status(500).send('Erro de processamento da api')
   }
