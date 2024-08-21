@@ -1,4 +1,3 @@
-//require('dotenv').config({ path: 'D:/monkCASE/.env' });
 const path = require('path');
 require('dotenv').config(path.join(__dirname, '../../.env'))
 //Getting global variables from .env

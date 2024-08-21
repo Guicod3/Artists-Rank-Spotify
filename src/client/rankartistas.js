@@ -30,16 +30,20 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             const spanPosition = document.createElement('span')
             const spanName = document.createElement('span')
             const spanFollowers = document.createElement('span')
+            const spanPopular = document.createElement('span')
             const li = document.createElement('li')
-            const a = document.createElement('a')
+            const div = document.createElement('div')
 
             //Create ClassName
             li.className = "flex items-center justify-start text-xl transition hover:bg-green-600 px-2 py-1 rounded-lg hover:-translate-y-1 hover:scale-110 max-sm:text-sm"
-            spanPosition.className = 'mr-5 w-10 max-sm:hidden'
+            spanPosition.className = 'mr-3 w-7 max-sm:hidden'
             spanImagem.className = 'w-8 h-8 rounded-lg mr-5 max-sm:mr-2 max-sm:size-7'
             spanFollowers.className = 'ml-auto'
+            spanPopular.className = 'm-auto'
+            div.className = 'bg-green-500 rounded-full w-8 h-8 flex items-center text-base mr-5 max-sm:mr-2 max-sm:w-6 max-sm:h-6 max-sm:text-xs'
 
             //Changes
+            spanPopular.textContent = item.popular
             spanImagem.src = item.images[2].url
             spanImagem.alt = item.name
             spanPosition.textContent = (index + 1).toString();
@@ -47,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             spanFollowers.textContent = new Intl.NumberFormat().format(item.followers);
 
             //AppendChild
+            div.appendChild(spanPopular)
             li.appendChild(spanPosition)
+            li.appendChild(div)
             li.appendChild(spanImagem)
             li.appendChild(spanName)
             li.appendChild(spanFollowers)
@@ -63,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
 
             //Create ClassName
             li.className = "flex items-center justify-start text-xl transition hover:bg-green-600 px-2 py-1 rounded-lg hover:-translate-y-1 hover:scale-110 max-sm:text-sm"
-            spanPosition.className = 'mr-5 max-sm:hidden'
+            spanPosition.className = 'mr-5 w-7 max-sm:hidden'
             spanImagem.className = 'w-8 h-8 rounded-lg mr-5 max-sm:mr-2 max-sm:size-7'
 
             //Changes
@@ -78,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             li.appendChild(spanGenre)
             liGenres.appendChild(li)
 
-            //off loading
+            //off loading component
             document.getElementById('loadingIndicator1').classList.add('hidden');
             document.getElementById('loadingIndicator2').classList.add('hidden');
         })

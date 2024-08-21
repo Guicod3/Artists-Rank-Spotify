@@ -6,7 +6,6 @@ class Artists {
         this.genres = genres
         this.popular = popular
         this.images = images
-        this.description = null
     }
 
     addDescription(text){
