@@ -1,6 +1,6 @@
 const liRank = document.getElementById('liArtist')
 const liGenres = document.getElementById('liGenres')
-import { redirect } from "./artistaspage.js";
+import { redirect } from "./redirect.js";
 
 const FirstLetter = (text) => { //Retornar a primeira letra maiúscula
     return text
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             spanPosition.textContent = (index + 1).toString();
             spanName.textContent = item.name
             spanFollowers.textContent = new Intl.NumberFormat().format(item.followers);
+            li.id = index
             li.addEventListener('click', redirect)
 
             //AppendChild

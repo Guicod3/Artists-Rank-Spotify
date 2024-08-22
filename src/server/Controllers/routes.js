@@ -46,7 +46,7 @@ app.get('/api/genres', async (req, res) => {
   }
 })
 
-app.get('/artistas', (req, res) => {
+app.get('/artistas/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/views/artistas.html'))
 })
 

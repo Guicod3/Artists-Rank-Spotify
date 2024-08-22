@@ -7,10 +7,6 @@ class Artists {
         this.popular = popular
         this.images = images
     }
-
-    addDescription(text){
-        this.description = text
-    }
 }
 
 module.exports = Artists;
