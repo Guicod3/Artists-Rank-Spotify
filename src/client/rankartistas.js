@@ -1,5 +1,6 @@
 const liRank = document.getElementById('liArtist')
 const liGenres = document.getElementById('liGenres')
+import { redirect } from "./artistaspage.js";
 
 const FirstLetter = (text) => { //Retornar a primeira letra maiúscula
     return text
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             const div = document.createElement('div')
 
             //Create ClassName
-            li.className = "flex items-center justify-start text-xl transition hover:bg-green-600 px-2 py-1 rounded-lg hover:-translate-y-1 hover:scale-110 max-sm:text-sm"
+            li.className = "cursor-pointer flex items-center justify-start text-xl hover:shadow-lg transition hover:bg-green-600 px-2 py-1 rounded-lg hover:-translate-y-1 hover:scale-110 max-sm:text-sm"
             spanPosition.className = 'mr-3 w-7 max-sm:hidden'
             spanImagem.className = 'w-8 h-8 rounded-lg mr-5 max-sm:mr-2 max-sm:size-7'
             spanFollowers.className = 'ml-auto'
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             spanPosition.textContent = (index + 1).toString();
             spanName.textContent = item.name
             spanFollowers.textContent = new Intl.NumberFormat().format(item.followers);
+            li.addEventListener('click', redirect)
 
             //AppendChild
             div.appendChild(spanPopular)
@@ -58,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             liRank.appendChild(li)
         })
 
+        //Advice
+        const liAdvice = document.createElement('li')
+        liAdvice.className = "flex items-center text-sm text-gray-400 justify-center"
+        liAdvice.textContent = 'clique no seu artista favorito para ver mais'
+        liRank.appendChild(liAdvice)
+
         dataGenres.forEach((item, index) =>{
             //Create Components
             const spanImagem = document.createElement('img')
@@ -66,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             const li = document.createElement('li')
 
             //Create ClassName
-            li.className = "flex items-center justify-start text-xl transition hover:bg-green-600 px-2 py-1 rounded-lg hover:-translate-y-1 hover:scale-110 max-sm:text-sm"
+            li.className = "cursor-pointer flex items-center justify-start text-xl hover:shadow-lg transition hover:bg-green-600 px-2 py-1 rounded-lg hover:-translate-y-1 hover:scale-110 max-sm:text-sm"
             spanPosition.className = 'mr-5 w-7 max-sm:hidden'
             spanImagem.className = 'w-8 h-8 rounded-lg mr-5 max-sm:mr-2 max-sm:size-7'
 

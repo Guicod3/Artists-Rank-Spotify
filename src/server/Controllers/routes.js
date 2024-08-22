@@ -46,6 +46,10 @@ app.get('/api/genres', async (req, res) => {
   }
 })
 
+app.get('/artistas', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../client/views/artistas.html'))
+})
+
 app.listen(port, () => {
   console.log('Servidor ativo na porta:', port);
 });
