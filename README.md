@@ -31,3 +31,8 @@ Este projeto é uma aplicação web que acessa a API do spotify e retorna os art
    ```bash
     Client_ID=seu_client_id
     Client_secret=seu_client_secret
+
+1. **Rode o projeto:**
+
+   ```bash
+    npm start
