@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             const data2 = await response2.json()
             dataArtists = data
             dataGenres = data2
-            console.log(dataArtists)
-            console.log(dataGenres)
         } catch (error) {
             console.error('Erro na API', error)
         }

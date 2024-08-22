@@ -4,7 +4,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const port = config.PORT;
-app.use(express.static('/monkCASE/src/client'));
+app.use(express.static(path.join(__dirname, '../../client')))
 const Artists = require('../Models/Artists.js');
 const { verifyRank, verifyTop5Genres } = require('../Services/verifyRank.js');
 
