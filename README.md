@@ -2,7 +2,7 @@
 
 ## 📖 Descrição
 
-Este projeto é uma aplicação web que acessa a API do spotify e retorna os artistas mais seguidos com base em um lista de artistas prévia. Ele utiliza o framework **Express.js** para o backend e **Tailwind CSS** para estilização, proporcionando uma interface responsiva para todas as telas.
+Este projeto é uma aplicação web que acessa a API do spotify e retorna os artistas mais seguidos com base em um lista de artistas prévia. Também permite o acesso à página individual de cada artista listado, onde é mostrado suas principais músicas e albuns lançados. Ele utiliza o framework **Express.js** para o backend e **Tailwind CSS** para estilização, proporcionando uma interface responsiva para todas as telas.
 
 ## 🛠️ Tecnologias Utilizadas
 
