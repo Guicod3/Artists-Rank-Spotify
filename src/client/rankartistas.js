@@ -96,5 +96,5 @@ document.addEventListener('DOMContentLoaded', () =>{ //Load ranking and genres
             document.getElementById('loadingIndicator2').classList.add('hidden');
         })
 
-    }, 2500);
+    }, 2000);
 })
