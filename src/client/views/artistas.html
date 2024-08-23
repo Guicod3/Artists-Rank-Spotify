@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">SpotRank</title>
+    <link href="../styles/output.css" rel="stylesheet">
+    <link rel="icon" href="../assets/Spotify-Icon.png" type="image/x-icon">
+    
+</head>
+<body class= "overflow-x-hidden bg-zinc-800" id="body">
+    <img class="w-12 h-12 flex items-center justify-center min-h-screen m-auto" src="../assets/loading-animation.svg" alt="loading" id="loadingIndicator1">
+    <main class="hidden" id="main">
+        <header class="text-white bg-zinc-800 h-80 mx-auto flex items-center p-6 shadow-lg shadow-zinc-900" id="header">
+
+        </header>
+    
+        <article>
+            <div class="text-white justify-start min-h-screen mx-auto flex flex-col my-20 xl:flex-row xl:justify-around">
+            <div class="text-center">
+                <h1 class="font-extrabold text-5xl mx-2">Músicas</h1>
+                <ul class="bg-zinc-800  p-5 m-10 rounded-lg text-3xl font-semibold space-y-2 max-sm:m-5"  id="litracks">
+                    <li class="cursor-pointer flex justify-start items-center text-gray-400 text-sm bg-zinc-900 p-2 px-4 rounded-lg">                  
+                        <span>Músicas</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center mt-5 xl:mt-0">
+                <h1 class="font-extrabold text-5xl mx-2">Álbuns</h1>
+                <ul class="bg-zinc-800 p-5 m-10 rounded-lg text-3xl font-semibold space-y-2 max-sm:m-5" id="liAlbum">
+                    <li class="cursor-pointer flex justify-start items-center text-gray-400 text-sm bg-zinc-900 p-2 px-4 rounded-lg">
+                        <span>Álbuns e singles</span>
+                    </li>
+                    
+                </ul>
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <script type="module" src="../redirect.js"></script>
+    <script type="module" src="../artistaspage.js"></script>
+</body>
+</html>
